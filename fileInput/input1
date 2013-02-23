@@ -1,0 +1,35 @@
+# this is a comment
+
+# Station := identifier
+Station := station1
+Station := station2
+Station := station3
+Station := station4
+Station := station5
+Station := station6
+
+# Locomotive := identifier,power,maxSpeed
+Locomotive := locomotive1,2,200
+# Wagon := identifier,seats,maxSpeed
+Wagon := wagon1,200,100
+
+# CompositeTrain := identifier,[identifier,]*
+CompositeTrain := composite1,locomotive1,wagon1
+
+# AtomicTrack := identifier,stationAIdentifier,stationBIdentifier,length
+AtomicTrack := atrack1,station1,station2,2
+AtomicTrack := atrack2,station2,station3,4
+AtomicTrack := atrack3,station3,station4,3
+AtomicTrack := atrack4,station4,station5,1
+AtomicTrack := atrack5,station5,station6,7
+
+# Route := identifier,stationAIdentifier,stationBIdentifier,[track_identifiers]+
+Route := route1,station1,station3,atrack1,atrack2
+Route := route2,station3,station6,atrack3,atrack4
+
+# Connection := identifier,stationFrom,stationTo,Track
+Connection := connection1,station6,station3,route2
+Connection := connection2,station3,station1,route1
+
+# Schedule := identifier,train_identifier,[connection_identifier]+ 
+Schedule := schedule1,composite1,connection1,connection2

@@ -1,0 +1,40 @@
+Station := A
+Station := B
+Station := C
+Station := D
+Station := E
+Station := F
+Station := G
+Station := H
+Station := I
+
+AtomicTrack := ab,A,B,10
+AtomicTrack := ad,A,D,10
+AtomicTrack := af,A,F,5
+AtomicTrack := be,B,E,10
+AtomicTrack := de,D,E,10
+AtomicTrack := fg,F,G,10
+AtomicTrack := ec,E,C,10
+AtomicTrack := cg,C,G,10
+AtomicTrack := gh,G,H,10
+        
+
+Connection := ab,A,B,ab
+
+Connection := ab,A,B,ab
+Connection := ad,A,D,ad
+Connection := fa,F,A,af
+Connection := be,B,E,be
+Connection := de,D,E,de
+Connection := gf,G,F,fg
+Connection := ec,E,C,ec
+Connection := cg,C,G,cg
+Connection := gh,G,H,gh
+
+Locomotive := loc,2,100
+Train := train,loc
+
+Schedule := s1,train,ab,be,ec
+Schedule := s2,train,ad,de
+Schedule := s3,train,cg,gf,fa
+Schedule := s4,train,gh
